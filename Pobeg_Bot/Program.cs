@@ -104,16 +104,13 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient,
     else if ((messageText.ToLower() == answerOne ||
         messageText.ToLower() == anotherAnaanswerOne ||
         messageText.ToLower() == anotherAnaanswerOne1)
-        && curentStep == 1)
     {
         await StepOne(chatId, cancellationToken);
-        curentStep++;
     }
 
     else if (messageText.ToLower() == answerTwo && curentStep == 2)
     {
         await StepTwo(chatId, cancellationToken);
-        curentStep++;
     }
 
     else if (((messageText.ToLower() == answerThree ||
@@ -121,93 +118,72 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient,
         messageText.ToLower() == anotherAnaanswerThree1 ||
         messageText.ToLower() == anotherAnaanswerThree2 ||
         messageText.ToLower() == anotherAnaanswerThree3 ||
-        messageText.ToLower() == anotherAnaanswerThree4)
-        && curentStep == 3))
+        messageText.ToLower() == anotherAnaanswerThree4))
     {
         await StepThree(chatId, cancellationToken, messageText);
-        curentStep++;
     }
 
     else if ((messageText.ToLower() == answerFour ||
         messageText.ToLower() == anotheranswerFour &&
         messageText.ToLower() == anotheranswerFour1 &&
-        messageText.ToLower() == anotheranswerFour2) &&
-        curentStep == 4)
+        messageText.ToLower() == anotheranswerFour2)
     {
         await StepFour(chatId, cancellationToken, messageText);
-        curentStep++;
     }
 
     else if ((messageText.ToLower() == answerFive ||
         messageText.ToLower() == answerFive1 ||
-        messageText.ToLower() == answerFive2)
-        && curentStep == 5)
+        messageText.ToLower() == answerFive2))
     {
         await StepFive(chatId, cancellationToken);
-        curentStep++;
     }
 
     else if (messageText.ToLower() == answerSix ||
         messageText.ToLower() == answerSix ||
-        messageText.ToLower() == answerSix && curentStep == 6)
+        messageText.ToLower() == answerSix)
     {
         await StepSix(chatId, cancellationToken, messageText);
-        curentStep++;
+        curentStep = 7;
     }
 
-    else if ((messageText.ToLower() == answerSevan ||
-       messageText.ToLower() == answerOne ||
-        messageText.ToLower() == anotherAnaanswerOne ||
-        messageText.ToLower() == anotherAnaanswerOne1
-        && curentStep == 7))
+    else if (messageText.ToLower() == answerSevan)
     {
         await StepSeven(chatId, cancellationToken, messageText);
-        curentStep++;
     }
 
     else if ((messageText.ToLower() == eght ||
         messageText.ToLower() == eght ||
-        messageText.ToLower() == eght)
-        && curentStep == 8)
+        messageText.ToLower() == eght))
     {
         await StepEight(chatId, cancellationToken);
-        curentStep++;
+        curentStep = ;
     }
 
     else if ((messageText.ToLower() == answerNine ||
         messageText.ToLower() == answerNine1 ||
         messageText.ToLower() == answerNine2 ||
         messageText.ToLower() == answerNine3)
-
-        && curentStep == 9)
     {
         await StepNine(chatId, cancellationToken);
-        curentStep++;
     }
 
     else if ((messageText.ToLower() == answerTen ||
-        messageText.ToLower() == answerTen1)
-        && curentStep == 10)
+        messageText.ToLower() == answerTen1))
     {
         await StepTen(chatId, cancellationToken);
-        curentStep++;
     }
 
     else if ((messageText.ToLower() == answerEleven ||
         messageText.ToLower() == answerEleven ||
-        messageText.ToLower() == answerEleven33)
-        && curentStep == 11)
+        messageText.ToLower() == answerEleven33))
+    
     {
         await StepEleven(chatId, cancellationToken);
         curentStep++;
     }
-    else if ((messageText.ToLower() == answerEleven1 || messageText.ToLower() == answerOne ||
-        messageText.ToLower() == anotherAnaanswerOne ||
-        messageText.ToLower() == anotherAnaanswerOne1)
-        && curentStep == 12)
+    else if ((messageText.ToLower() == answerEleven1)
     {
-        await StepEleven2(chatId, cancellationToken);
-        curentStep++;
+        await StepEleven2(chatId, cancellationToken));
     }
 
     else
@@ -223,13 +199,6 @@ async Task Sartingstep(long chatId, CancellationToken cancellationToken)
     Message sentMessage = await botClient.SendTextMessageAsync(
         chatId: chatId,
         text: "Привет, Яночка! Я рад, что ты нашла моё послание! Меня зовут Пумпяка.",
-        cancellationToken: cancellationToken);
-
-    Thread.Sleep(800);
-
-    sentMessage = await botClient.SendTextMessageAsync(
-        chatId: chatId,
-        text: "",
         cancellationToken: cancellationToken);
 
     Thread.Sleep(6500);
