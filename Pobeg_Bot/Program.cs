@@ -52,7 +52,7 @@ var answerEleven33 = "Печенька";
 
 var answerEleven1 = "разрушила";
 
-var Token = "5160531162:AAEDHL0dfaVyxJ0CP-1mm5Azd1RZ38inEnA";
+var Token = "7877457011:AAF2IShehGE53CVeKFjgU6dtWAeG1Byxfiw";
 
 var botClient = new TelegramBotClient(Token);
 int curentStep = -1;
